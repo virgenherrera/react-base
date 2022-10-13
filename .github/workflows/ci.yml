@@ -36,6 +36,10 @@ jobs:
       - name: (Check:)  prettier
         run: npm run check:prettier
 
+      - name: (Test:) Unit
+        timeout-minutes: 15
+        run: npm run test:unit
+
       - name: (Build:) Typescript Project
         run: npm run build:tsc
 

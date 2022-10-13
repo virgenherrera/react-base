@@ -9,14 +9,14 @@
     "build:tsc": "tsc",
     "build:vite": "vite build",
     "preview": "vite preview",
+    "test": "npm run local:ci",
+    "test:unit": "jest",
     "UT:develop": "jest --watch --maxWorkers=1",
     "UT:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "cleanup": "rimraf coverage/ dist/",
     "check:eslint": "eslint \"src/**/*.ts\"",
     "check:prettier": "prettier --check \"src/**/*.ts\"",
-    "local:ci": "run-s -l cleanup check:* test:* build:*",
-    "test:unit": "jest",
-    "test": "npm run local:ci"
+    "local:ci": "run-s -l cleanup check:* test:* build:*"
   },
   "dependencies": {
     "react": "^18.2.0",
