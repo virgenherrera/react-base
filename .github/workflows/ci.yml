@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.10.x]
+        node-version: [18.4.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -30,11 +30,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: (Check:) eslint
-        run: npm run check:eslint
-
-      - name: (Check:)  prettier
-        run: npm run check:prettier
+      - name: (Test:) static
+        run: npm run test:static
 
       - name: (Test:) Unit
         timeout-minutes: 15
